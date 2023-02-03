@@ -57,7 +57,7 @@ const FormComponent = ({
                 </div>
                 <div className='row'>
                     <div className='col-sm-2'>
-                        <input type="number" onChange={e => handleInputChange(e, index)} name="inputText" value={data.inputText} style={{ width: '8vw' }} />
+                        <input type="number" class="form-control" onChange={e => handleInputChange(e, index)} name="inputText" value={data.inputText} style={{ width: '8vw' }} />
                     </div>
                     <div className='col-sm-2'>
                         <select class="form-select" onChange={e => handleInputChange(e, index)} name="positionType" value={data.positionType}>
@@ -131,7 +131,7 @@ const FormComponent = ({
                     </select>
                 </div>
                 <div className='col-sm-1' style={{ marginRight: '10vw' }}>
-                    <input type="number" disabled={!data.check_one} onChange={e => handleInputChange(e, index)} name="simpleMomentumValue" value={data.simpleMomentumValue} style={{ width: '8vw' }} />
+                    <input type="number" class="form-control" disabled={!data.check_one} onChange={e => handleInputChange(e, index)} name="simpleMomentumValue" value={data.simpleMomentumValue} style={{ width: '8vw' }} />
                 </div>
 
                 <div className='col-sm-2'>
@@ -146,7 +146,7 @@ const FormComponent = ({
                     </select>
                 </div>
                 <div className='col-sm-1'>
-                    <input type="number" onChange={e => handleInputChange(e, index)} name="trailSLvalue" value={data.trailSLvalue} disabled={!data.check_two} style={{ width: '8vw' }} />
+                    <input type="number" class="form-control" onChange={e => handleInputChange(e, index)} name="trailSLvalue" value={data.trailSLvalue} disabled={!data.check_two} style={{ width: '8vw' }} />
                 </div>
             </div>
             <hr />

@@ -11,7 +11,7 @@ const FormComponent = ({
     const handleInputChange = (e, index) => {
         const { name, value, type } = e.target;
         const list = [...inputList];
-        
+
         if (type === "checkbox") {
             list[index][name] = !value;
         }
@@ -19,8 +19,8 @@ const FormComponent = ({
         list[index][name] = value;
         setInputList(list);
         console.log("value", typeof value);
-        console.log("index",index);
-        console.log("name",name);
+        console.log("index", index);
+        console.log("name", name);
     };
 
     const options = ['Select', 'One', 'Two', 'Three'];
@@ -46,7 +46,14 @@ const FormComponent = ({
                     <div className='col-sm-2'><h6>Option Type</h6></div>
                     <div className='col-sm-2'><h6>Expiry</h6></div>
                     <div className='col-sm-2'><h6>Select Strike Type</h6></div>
-                    <div className='col-sm-2'><button onClick={handleAddClickCopy}>copy</button></div>
+                    <div className='col-sm-2' style={{display: 'flex', flexDirection: 'column'}}>
+                        <button style={{ float: 'right' }} class="btn btn-secondary btn-sm" onClick={handleAddClickCopy}>
+                            COPY
+                        </button>
+                        {inputList.length !== 1 && <>
+                            <button type="button" class="btn btn-primary btn-sm mt-2" onClick={() => handleRemoveClick(index)}>Delete</button>
+                        </>}
+                    </div>
                 </div>
                 <div className='row'>
                     <div className='col-sm-2'>
@@ -105,7 +112,7 @@ const FormComponent = ({
             </div>
             <div className='row'>
                 <div className='col-sm-4' >
-                    <input type="checkbox" style={{ marginLeft: '1vw' }} onChange={e => handleInputChange(e, index)} value={data.check_one} name="check_one" checked={data.check_one}/>
+                    <input type="checkbox" style={{ marginLeft: '1vw' }} onChange={e => handleInputChange(e, index)} value={data.check_one} name="check_one" checked={data.check_one} />
                 </div>
                 <div className='col-sm-4'>
                     <input type="checkbox" style={{ marginLeft: '4vw' }} onChange={e => handleInputChange(e, index)} value={data.check_two} name="check_two" checked={data.check_two} />
@@ -148,11 +155,8 @@ const FormComponent = ({
                     onClick={handleAddClick}> <span className='plus_btn'>Add Leg</span></button>}
             </div>
             <div className='next_page'>
-                {inputList.length !== 1 && <>
-                    <button type="button" class="btn btn-primary btn-lg next_btn" onClick={() => handleRemoveClick(index)}>Delete</button>
-                </>}
                 {inputList.length - 1 === index && <>
-                    <button type="button" className="btn btn-primary btn-lg next_btn" onClick={navigatetoOneOne}>Submit</button>
+                    <button type="button" className="btn btn-primary btn-lg next_btn" onClick={navigatetoOneOne}>Final Submit</button>
                 </>
                 }
             </div>

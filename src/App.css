@@ -1,66 +1,36 @@
-.First {
-  text-align: center;
-  height: 4vw;
-  padding-top: 2vw;
-  font-size: 2vw;
-  color: #0876c5;
-  font-weight: 700;
-}
-
-/* .Second {
+.app-container {
   display: flex;
-  justify-content: space-between;
-  padding: 1vw;
-  background: #d7adad;
-  height: 32vw;
-} */
-
-.footer {
-  background-color: antiquewhite;
-  height: 4vw;
-  text-align: center;
-  padding-top: 2vw;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
 }
 
-.form_div {
-  /* border: 1px solid black; */
-  margin-top: 1vw;
-  /* padding: 1vw; */
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.diag_prob {
-  margin-left: 1vw;
+th,
+td {
+  border: 1px solid #ffffff;
+  text-align: left;
+  padding: 8px;
+  font-size: 32px;
 }
 
-.Button_add {
+th {
+  background-color: rgb(117, 201, 250);
+}
+
+td {
+  background-color: rgb(205, 235, 253);
+}
+
+form {
   display: flex;
-  justify-content: center;
+  gap: 5px;
 }
 
-.next_page {
-  display: flex;
-  justify-content: center;
-}
-
-.NextButton {
-  margin-right: 3vw;
-}
-
-.form_title {
-  font-weight: 500;
-}
-
-.plus_btn {
-  color: #fff;
-  font-size: 1.5vw;
-}
-
-.next_btn{
-  width: 25%;
-  margin-right: 2vw;
-}
-
-.no_data_sum{
-  padding: 2vw;
-  color: brown;
+form * {
+  font-size: 18px;
 }
